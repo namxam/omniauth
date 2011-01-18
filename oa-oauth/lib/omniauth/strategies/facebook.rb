@@ -34,6 +34,7 @@ module OmniAuth
           'last_name' => user_data["last_name"],
           'name' => "#{user_data['first_name']} #{user_data['last_name']}",
           'image' => "http://graph.facebook.com/#{user_data['id']}/picture?type=square",
+          'location' => (user_data["location"]["name"] if user_data["location"] && user_data["location"]["name"]),
           'urls' => {
             'Facebook' => user_data["link"],
             'Website' => user_data["website"],
